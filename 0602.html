@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Camp 0602</title>
+    <!-- /*0602載入網頁css文字模板、顏色、套件*/ -->
+    <link rel="stylesheet" href="css/0602.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        /* 全域設定 */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans TC", sans-serif;
+        }
+
+        /* 主內容區 */
+        .wrapper {
+            width: 1024px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+
+            background-color: var(--bg-card);
+
+            box-shadow: 0 5px 20px var(--shadow-light);
+        }
+
+        /* Banner 圖片區 */
+        .imagbox {
+            width: 1024px;
+            height: 320px;
+
+            background-image: url(image/camp02.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-radius: 0 0 0px 0px;
+        }
+
+        /* 導覽列 */
+        nav {
+            background-color: var(--theme-primary);
+
+            text-align: center;
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* 導覽列 ul */
+        nav ul {
+            display: inline-block;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 導覽列 li */
+        nav ul li {
+            float: left;
+
+            list-style-type: none;
+        }
+
+        /* 導覽按鈕 */
+        nav ul li a {
+            display: block;
+
+            text-decoration: none;
+
+            color: var(--bg-primary);
+
+            background-color: var(--shadow-medium);
+
+            margin-right: 20px;
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 42px;
+            padding-right: 42px;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hover 效果 */
+        nav ul li a:hover {
+            background-color: var(--bg-primary);
+
+            color: var(--theme-primary);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 12px var(--shadow-medium);
+        }
+
+        /* 內容區塊 */
+        .content {
+            background-color: var(--bg-primary);
+
+            text-align: center;
+
+            padding-top: 50px;
+            padding-bottom: 60px;
+            padding-left: 90px;
+            padding-right: 90px;
+
+            line-height: 2;
+        }
+
+        /* 主標題 */
+        .content h1 {
+            color: var(--theme-primary);
+
+            font-size: 42px;
+
+            margin-bottom: 30px;
+
+            letter-spacing: 3px;
+            font-family: "LXGW WenKai Mono TC", monospace;
+            font-weight: bold;
+        }
+
+        /* 文章內容 */
+        .content p {
+            color: var(--text-primary);
+
+            font-size: 16px;
+
+            margin-bottom: 16px;
+
+            line-height: 1.8;
+
+            letter-spacing: 1px;
+            text-align: justify;
+            /* 讓文字左右等距對齊，不置中 */
+            text-align-last: left;
+            /* 避免最後一行文字被強制分散拉伸 */
+        }
+
+        /* CTA 按鈕 */
+        .content a {
+            display: inline-block;
+
+            width: 160px;
+            height: 48px;
+
+            margin-top: 20px;
+
+            background-color: var(--theme-primary);
+
+            color: var(--text-light);
+
+            text-decoration: none;
+
+            text-align: center;
+
+            line-height: 48px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            border-radius: 50px;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 4px 10px var(--shadow-medium);
+        }
+
+        /* CTA Hover */
+        .content a:hover {
+            background-color: var(--hover-primary);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 16px var(--shadow-medium);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-primary);
+
+            text-align: center;
+
+            padding-top: 12px;
+            padding-bottom: 12px;
+
+            margin-top: 0;
+        }
+
+        /* Footer 文字 */
+        .footer p {
+            color: var(--bg-primary);
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+        /* 0602 RWD網頁縮放調整 @media; 1024px為手機寬度; max-width低於這個數值的都試用 */
+        @media screen and (max-width:1200px)and (min-width:1025px){
+            .wrapper{
+                width: 100%;
+            }
+            .imagbox{
+                width: 100%;
+                background-image: url(image/camp01.jpg);
+                background-position:center center;
+            }
+
+
+        }
+        @media screen and (max-width:1024px) {
+            .wrapper {
+                width: 100%;
+            }
+
+            .imagbox {
+                width: 100%;
+                background-image:url(image/camp05.jpg);
+                background-position: left bottom;
+            }
+            /* 螢幕越小按鈕越大，因為有手操作 */
+            nav ul{
+                display: block;
+                padding-left: 10px;
+                margin: 0;
+            }   
+            nav ul li{
+                float: none;
+                margin-bottom: 5px;
+                
+            }
+            .content{
+                padding-left: 25px;
+                padding-right: 25px;
+                
+            }
+            .content p{
+                font-size: 16px;
+                line-height: 1.2;
+                text-align:justify;
+
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="banner">
+
+            <div class="imagbox"></div>
+
+            <!-- 導覽列 -->
+            <nav>
+
+                <ul>
+                    <!-- 0602插入元件及變更顏色 -->
+                    <li>
+                        <a href="www.google.com"><i class="fa-regular fa-house btn-text-light"></i> 首頁</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-plus btn-text-light"></i> 最新消息</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-shop btn-text-light"></i> 合作店家</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-info btn-text-light"></i> 關於我們</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-regular fa-envelope btn-text-light"></i> 聯絡我們</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <!-- 內容區 -->
+        <div class="content">
+
+            <h1>走進森林，享受最純粹的露營時光</h1>
+            <!-- 0602改變文字字型 -->
+            <p class="fw-100">
+                遠離城市喧囂，在山林與微風之間體驗最放鬆的露營生活。
+                我們提供舒適營位、自然景觀與完善設施，
+                讓每一次旅行都成為難忘回憶。
+            </p>
+
+            <p class="fw-500">
+                白天感受森林芬多精，夜晚欣賞滿天星空與營火時光。
+                不論是親子旅遊、好友聚會或情侶露營，
+                都能找到屬於自己的慢活節奏。
+            </p>
+
+            <p>
+                探索大自然的美好，體驗最溫暖的山林假期。
+                立即預約露營行程，開啟屬於你的戶外冒險。
+            </p>
+
+            <!-- CTA -->
+            <a href="">立即預約</a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+
+            <p>Power by Forest Camp</p>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        console.log("Forest Camp Website Ready");
+
+    </script>
+
+</body>
+
+</html>

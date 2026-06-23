@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>露營用品 ERP 商品管理</title>
+
+    <link rel="stylesheet" href="css/0605boostrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Personal.css">
+
+    <style>
+        /* ERP Table Style */
+        .erp-table{
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            font-size: 15px;
+        }
+
+        .erp-header th{
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            padding: 12px;
+        }
+
+        .erp-table td{
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+
+        .erp-table tbody tr:nth-child(even){
+            background-color: #f8f9fa;
+        }
+
+        .erp-table tbody tr:hover{
+            background-color: #e8f4ff;
+        }
+
+        /* 價格 */
+        .erp-table td:first-child{
+            text-align: center;
+            color: #198754;
+            font-weight: bold;
+        }
+
+        .erp-table td:first-child::before{
+            content: "";
+        }
+
+        /* 數量置中 */
+        .erp-table td:nth-child(4){
+            text-align: center;
+        }
+
+        /* 備註 */
+        .erp-table td:last-child{
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        /* 庫存不足 */
+        .erp-low-stock{
+            background-color: #fff3cd !important;
+        }
+
+        .erp-low-stock td:nth-child(4){
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        /* RWD */
+        @media screen and (max-width:768px){
+
+            .table-rwd thead,
+            .table-rwd caption{
+                display: none;
+            }
+
+            .table-rwd tbody tr{
+                display: block;
+                margin-bottom: 12px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                box-shadow: 0 2px 5px rgba(0,0,0,.08);
+                padding: 10px;
+                background-color: #fff;
+            }
+
+            .table-rwd tbody tr td{
+                display: block;
+                border: none;
+                padding: 8px 0;
+            }
+
+            .table-rwd tbody tr td::before{
+                content: attr(data-th) "：";
+                font-size: 15px;
+                font-weight: 600;
+                color: #495057;
+                display: block;
+                float: left;
+                width: 35%;
+                text-align: right;
+                padding-right: 10px;
+            }
+
+            .table-rwd tbody tr td span,
+            .table-rwd tbody tr td{
+                display: block;
+            }
+
+            .table-rwd tbody tr td::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container my-4">
+
+    <div class="display-5 text-center fw-bold mb-4">
+        露營用品商品管理
+    </div>
+
+    <table class="table erp-table table-rwd">
+        <caption>商品庫存管理明細表</caption>
+
+        <thead class="erp-header">
+            <tr>
+                <th>產品價格</th>
+                <th>產品品名</th>
+                <th>產品規格</th>
+                <th>產品數量</th>
+                <th>產品備註</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td data-th="產品價格">1680</td>
+                <td data-th="產品品名">露營摺疊桌</td>
+                <td data-th="產品規格">90×60cm</td>
+                <td data-th="產品數量">12</td>
+                <td data-th="產品備註">正常庫存</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">2580</td>
+                <td data-th="產品品名">鋁合金蛋捲桌</td>
+                <td data-th="產品規格">120×70cm</td>
+                <td data-th="產品數量">6</td>
+                <td data-th="產品備註">熱銷商品</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">980</td>
+                <td data-th="產品品名">露營折疊椅</td>
+                <td data-th="產品規格">承重120kg</td>
+                <td data-th="產品數量">25</td>
+                <td data-th="產品備註">正常庫存</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">3990</td>
+                <td data-th="產品品名">雙人帳篷</td>
+                <td data-th="產品規格">210×210cm</td>
+                <td data-th="產品數量">8</td>
+                <td data-th="產品備註">新品上市</td>
+            </tr>
+
+            <tr class="erp-low-stock">
+                <td data-th="產品價格">6990</td>
+                <td data-th="產品品名">四人帳篷</td>
+                <td data-th="產品規格">300×240cm</td>
+                <td data-th="產品數量">3</td>
+                <td data-th="產品備註">庫存不足</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">450</td>
+                <td data-th="產品品名">LED營燈</td>
+                <td data-th="產品規格">USB充電</td>
+                <td data-th="產品數量">40</td>
+                <td data-th="產品備註">正常庫存</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">790</td>
+                <td data-th="產品品名">野營炊具組</td>
+                <td data-th="產品規格">5件套</td>
+                <td data-th="產品數量">18</td>
+                <td data-th="產品備註">熱銷商品</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">320</td>
+                <td data-th="產品品名">不鏽鋼水壺</td>
+                <td data-th="產品規格">1L</td>
+                <td data-th="產品數量">35</td>
+                <td data-th="產品備註">正常庫存</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">1280</td>
+                <td data-th="產品品名">露營睡墊</td>
+                <td data-th="產品規格">單人加厚</td>
+                <td data-th="產品數量">14</td>
+                <td data-th="產品備註">熱銷商品</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">1880</td>
+                <td data-th="產品品名">羽絨睡袋</td>
+                <td data-th="產品規格">舒適溫度5°C</td>
+                <td data-th="產品數量">9</td>
+                <td data-th="產品備註">正常庫存</td>
+            </tr>
+
+            <tr>
+                <td data-th="產品價格">2380</td>
+                <td data-th="產品品名">防水天幕</td>
+                <td data-th="產品規格">4×4m</td>
+                <td data-th="產品數量">7</td>
+                <td data-th="產品備註">新品上市</td>
+            </tr>
+
+            <tr class="erp-low-stock">
+                <td data-th="產品價格">520</td>
+                <td data-th="產品品名">營釘套組</td>
+                <td data-th="產品規格">20入</td>
+                <td data-th="產品數量">2</td>
+                <td data-th="產品備註">需補貨</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<script src="java/0605boostrap.js"></script>
+
+</body>
+</html>
