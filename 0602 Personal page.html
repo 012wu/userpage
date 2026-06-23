@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal file</title>
+    <link rel="stylesheet" href="css/Personal.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        /* s01 首頁 */
+        .s01 {
+            /* 高度以百分比對應瀏覽器視窗高度 vh (viewport height) */
+            background-color: var(--bg-primary);
+            height: 90vh;
+            position: relative;
+            font-family: "Noto Sans TC", sans-serif;
+        }
+
+        .s01 .box01 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--brand-primary);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .s01 .box02 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--brand-primary);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .s01 .box03 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--brand-primary);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .s01 .box04 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--brand-primary);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .s01 .userimg {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            bottom: 100px;
+            right: 100px;
+            background-image: url(image/code-background.jpg);
+            /* 調整圖片選取位置 左右(從left開始)，上下(從top開始) */
+            background-position: 10px 30%;
+            /* 圖片大小調整的跟格式一樣cover */
+            background-size: cover;
+            /* 圖片效果調整 filter */
+            filter: blur(20px);
+            /* filter: grayscale(0.5); */
+            border-radius: 2%;
+            box-shadow: var(--shadow-colo);
+        }
+
+        .s01 .usertext {
+            color: var(--text-primary);
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 40%;
+            font-size: 20px;
+
+        }
+
+        /* s02 作品集  */
+        .s02 {
+            padding: 80px 10%;
+            background-color: var(--bg-secondary);
+            text-align: center;
+            font-family: "Noto Sans TC", sans-serif;
+        }
+
+        .s02 h2 {
+            font-size: 36px;
+            color: var(--text-primary);
+        }
+
+        .s02 .card02 {
+            /* 水平排列inline-block */
+            display: inline-block;
+            margin: 15px;
+            width: 240px;
+            height: 260px;
+            background-color: var(--brand-secondary);
+            padding: 20px;
+            text-align: left;
+            border-radius: 5%;
+            vertical-align: top;
+            
+        }
+
+        .s02 .card02 h3 {
+            font-size: 18px;
+            color: var(--text-secondar);
+            margin-top: 0.5px;
+
+        }
+
+        .s02 .card02 p {
+            font-size: 14px;
+            color: var(--text-secondar);
+            line-height: 1.7;
+
+        }
+
+        .s02 .card02 a {
+            font-size: 14px;
+            background-color: var(--bg-secondary);
+            padding: 5px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .s02 .card03 {
+            /* 水平排列inline-block */
+            display: inline-block;
+            margin: 15px;
+            width: 240px;
+            height: 260px;
+            background-color: var(--brand-secondary);
+            padding: 20px;
+            text-align: left;
+            border-radius: 5%;
+            vertical-align: top;
+        }
+
+        .s02 .card03 h3 {
+            font-size: 18px;
+            color: var(--text-secondar);
+            margin-top: 0.5px;
+
+        }
+
+        .s02 .card03 p {
+            font-size: 14px;
+            color: var(--text-secondar);
+            line-height: 1.7;
+
+        }
+
+        .s02 .card03 a {
+            font-size: 14px;
+            background-color: var(--bg-secondary);
+            padding: 5px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .s02 .card04 {
+            /* 水平排列inline-block */
+            display: inline-block;
+            margin: 15px;
+            width: 240px;
+            height: 260px;
+            background-color: var(--brand-secondary);
+            padding: 20px;
+            text-align: left;
+            border-radius: 5%;
+            vertical-align: top;
+        }
+
+        .s02 .card04 h3 {
+            font-size: 18px;
+            color: var(--text-secondar);
+            margin-top: 0.5px;
+
+        }
+
+        .s02 .card04 p {
+            font-size: 14px;
+            color: var(--text-secondar);
+            line-height: 1.7;
+
+        }
+
+        .s02 .card04 a {
+            font-size: 14px;
+            background-color: var(--bg-secondary);
+            padding: 5px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-primary);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="s01">
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimg"></div>
+        <div class="usertext">
+            <h1>XXX個人履歷</h1>
+            <!-- hr為直線 -->
+            <hr>
+            <h2>應徵職位:</h2>
+            <p class="fw-100"> 過往擔任過</p>
+        </div>
+    </section>
+    <section class="s02">
+        <h2>我的作品</h2>
+        <!-- 作品02 -->
+        <div class="card02">
+            <h3>HTML/CSS 網頁切版入門</h3>
+            <p>使用原生 CSS 媒體查詢（Media Queries）實作 RWD 響應式佈局，在行動端自動將導覽列從水平排列切換為垂直單欄卡片，並運用 CSS 變數（Variables）管理全域主題色彩與字型</p>
+            <!-- 連結點擊後另開視窗target="blank" -->
+            <a href="0602.html" target="blank">查看作品</a>
+        </div>
+        <!-- 作品03 -->
+        <div class="card03">
+            <h3>ERP商品清單建立</h3>
+            <p>利用 Bootstrap 5 搭配自訂 CSS 媒體查詢，將傳統 ERP 表格在手機端自動重組為卡片式 RWD 響應式排版，並具備低庫存自動色塊警示功能</p>
+            <!-- 連結點擊後另開視窗target="blank" -->
+            <a href="0605table-ai.html" target="blank">查看作品</a>
+        </div>
+        <!-- 作品04 -->
+        <div class="card04">
+            <h3>應用技術簡介</h3>
+            <p>結合 Bootstrap 5 RWD 網格系統與 jQuery AJAX 技術，實現動態讀取 API 資料並自動清洗防錯，打造隨螢幕尺寸流暢變化的響應式個人簡介卡片</p>
+            <!-- 連結點擊後另開視窗target="blank" -->
+            <a href="0618 practice2-aidata.html" target="blank">查看作品</a>
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>
