@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0618 practice</title>
+    <link rel="stylesheet" href="css/0605boostrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/Personal.css">
+    <style>
+        .banner {
+            height: 200px;
+            background-image: url(image/camp09.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        .navbox01 {
+            height: 90px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            /* 文字會變「垂直置中感」 */
+            line-height: 90px;
+            font-size: 48px;
+            font-weight: 900;
+            text-align: center;
+            color: aliceblue;
+
+        }
+
+        @media screen and (min-width:768px) {
+            .navbox01 {
+                height: 180px;
+                line-height: 180px;
+            }
+        }
+
+        @media screen and (min-width:992px) {
+            .navbox01 {
+                width: 180px;
+                line-height: 180px;
+                border-radius: 50%;
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            .navbox01 {
+                width: 220px;
+                height: 220px;
+                line-height: 220px;
+            }
+        }
+
+
+        .contentbox {
+            height: 600px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 5px 5px 5px 5px #ccc;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-none d-sm-block">
+                <div class="banner bg-info"></div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <div class="navbox01 bg-primary mx-auto">選單01</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navbox01 bg-primary mx-auto">選單02</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navbox01 bg-primary mx-auto">選單03</div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="navbox01 bg-primary mx-auto">選單04</div>
+            </div>
+
+        </div>
+        <div class="row" id="mydata">
+            <div class="col-sm-12 col-md-6 col-lg-4 ">
+                <div class="contentbox text-center roller-t">
+                    <div class="roller-box">
+                        <button class="btn btn-success">查看</button>
+                    </div>
+                    <!-- 餐廳圖片 -->
+                    <img src="image/camp09.jpg" class="img-fluid rounded mb-3" alt="餐廳圖片" style="height: 250px; width: 100%; object-fit: cover; background-color: #eee; display: block; line-height: 200px; text-align: center; color:#666">
+
+                    <!-- 餐廳名稱 -->
+                    <h4 class="fw-bold text-center">
+                        森林餐酒館
+                    </h4>
+                    <!-- 地址 -->
+                    <p class="text-muted mb-2">
+                        <i class="fa-solid fa-location-dot text-danger"></i>
+                        台中市西屯區公益路100號
+                    </p>
+                    <!-- 電話 -->
+                    <p class="text-muted mb-2">
+                        <i class="fa-solid fa-phone text-succes"></i>
+                        04-24911111
+                    </p>
+
+                    <!-- 簡介 -->
+                    <p class="text-start">
+                        主打義式料理與創意燉飯，嚴選當季新鮮食材，搭配舒適木質裝潢，
+                        適合朋友聚餐、家庭聚會及情侶約會，提供溫馨愉快的用餐體驗。
+                    </p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="java/0605boostrap.js"></script>
+    <script src="java/jquery-4.0.0.js"></script>
+
+    <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                dataType: "json",
+                // success：成功取得資料後執行
+                success: function (data) {
+                    // 清洗資料
+                    const cleanData = data.map(function (item, index) {
+                        //圖片
+                        let img = (item.PicURL ?? "").trim()
+                        if (img == "" || img.includes("miss")) {
+                            img = "未提供圖片";
+                        }
+                        //名稱
+                        let name = (item.Name ?? "").trim()
+                        if (name == "") {
+                            name = "未提供商店名稱";
+                        }
+                        //地址
+                        let address = (item.Address ?? "").trim()
+                        if (address == "") {
+                            address = "未提供商店地址";
+                        }
+
+                        let city = (item.City ?? "").trim()
+                        if (city == "") {
+                            city = "未提供商店地址";
+                        }
+
+                        let town = (item.Town ?? "").trim()
+                        if (town == "") {
+                            town = "未提供商店地址";
+                        }
+
+                        //電話
+                        let tel = (item.Tel ?? "").trim()
+                        if (tel == "") {
+                            tel = "未提供商店電話";
+                        }
+                        //簡介
+                        let description = (item.HostWords ?? "").trim()
+                        if (description == "") {
+                            description = "未提供商店簡介";
+                        }
+
+
+                        return {
+                            img: img,
+                            name: name,
+                            address: city + town + address,
+                            tel: tel,
+                            description: description,
+
+                        }
+                    });
+
+                    console.log("清洗資料", cleanData);
+                    // 資料渲染
+                    $("#mydata").empty()
+                    cleanData.forEach(function (item) {
+                        let strhtml = `<div class="col-sm-12 col-md-6 col-lg-4 ">
+                                         <div class="contentbox text-center roller-t">
+                                             <div class="roller-box">
+                                               <button class="btn btn-success">查看</button>
+                                            </div>
+                                            <img src="${item.img}" class="img-fluid rounded mb-3" alt="未提供圖片" style="height: 250px; width: 100%; object-fit: cover; background-color: #eee; display: block; line-height: 200px; text-align: center; color:#666">
+                                            <!-- 餐廳名稱 -->
+                                            <h4 class="fw-bold text-center">
+                                                ${item.name}
+                                            </h4>
+
+                                            <p class="text-muted mb-2">
+                                                <i class="fa-solid fa-location-dot text-danger"></i>
+                                                ${item.address}
+                                            </p>
+                                            <p class="text-muted mb-2">
+                                                <i class="fa-solid fa-phone text-succes"></i>
+                                                ${item.tel}
+                                            </p>
+
+                                            <p class="text-start">
+                                                ${item.description}
+                                            </p>`
+                        $("#mydata").append(strhtml);
+                    });
+
+                },
+
+                // error：取得資料失敗時執行
+                error: function (err) {
+                    console.log(err)
+                },
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
