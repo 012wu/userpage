@@ -1,0 +1,129 @@
+/* 0602獨立出網頁可以共用的資訊，單獨一個檔案，例如:字型、顏色 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Noto+Sans+TC:wght@900&display=swap');
+
+/* =========================
+           Camp Website Final Style
+           品牌色：
+           主色 
+           背景色 
+           文字色 
+        ========================= */
+/* 0602 變數(:root)要設定主要色表-AI取得 */
+:root {
+    /* 主題色 */
+    --theme-primary: #2F5D50;
+    /* 森林綠 */
+    --theme-secondary: #A67C52;
+    /* 木質棕 */
+    --theme-accent: #D08987;
+    /* 營火暖橘 */
+
+    /* 背景色 */
+    --bg-primary: #F5F1E8;
+    /* 米白 */
+    --bg-secondary: #E7E0D1;
+    /* 淺沙色 */
+    --bg-card: #FFFFFF;
+    /* 卡片白 */
+    --bg-dark: #25352E;
+    /* 深松木綠 */
+
+    /* 文字色 */
+    --text-primary: #2B2B2B;
+    /* 主文字 炭黑色 */
+    --text-secondary: #6B6B6B;
+    /* 次文字 石墨灰 */
+    --text-light: #FFFFFF;
+    /* 淺色文字 純白色 */
+
+    /* 功能色 */
+    --success: #4E7C59;
+    /* 成功 森林綠 */
+    --warning: #D4A017;
+    /* 警告 琥珀黃*/
+    --danger: #B85450;
+    /* 錯誤 磚紅色*/
+    --info: #6C8EA3;
+    /* 資訊 湖水藍*/
+
+    /* 邊框 */
+    --border-light: #DDD7CC;
+    /* 淺亞麻色 */
+    --border-dark: #B5AE9F;
+    /* 灰褐色 */
+    --divider: #D8D2C6;
+    /* 分隔米灰 */
+
+    /* Hover */
+    --hover-primary: #3D7867;
+    /* 深森林綠 */
+    --hover-secondary: #B88B5F;
+    /* 焦糖木棕 */
+
+    /* 陰影 */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    /* 狀態色 */
+    --disabled-bg: #E0DED8;
+    /* 淺霧灰 */
+    --disabled-text: #9B978F;
+    /* 中性灰 */
+
+    /* 中性色 */
+    --neutral-light: #F8F6F1;
+    /* 奶油白 */
+    --neutral-medium: #CFC8BB;
+    /* 淺卡其灰 */
+    --neutral-dark: #4A4A4A;
+    /* 深灰色 */
+
+}
+
+/* 字體格式 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* 字體顏色 */
+.btn-text-primary{
+    color:var(--text-primary)
+}
+.btn-text-secondary{
+    color:var(--text-secondary)
+}
+.btn-text-light{
+    color: var(--text-light);
+}
